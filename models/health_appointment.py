@@ -17,10 +17,10 @@ class HealthAppointment(models.Model):
     )
     contact_id = fields.Many2one(
         'res.partner',
-        string='Owner',
+        string='Contact',
         required=False
     )
-    period = fields.Float('Period')
+    period = fields.Integer('Period')
     type = fields.Selection([
         ('dental', 'Dentiste'),
         ('foot', 'Podologue'),
