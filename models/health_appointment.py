@@ -20,7 +20,9 @@ class HealthAppointment(models.Model):
         string='Contact',
         required=False
     )
-    period = fields.Integer('Period')
+    period = fields.Integer('Period (month)', default="12")
+    last_date = fields.Date('Last date')
+    next_date = fields.Date('Next date')
     type = fields.Selection([
         ('dental', 'Dentiste'),
         ('foot', 'Podologue'),

@@ -13,6 +13,8 @@
                 options="{'no_open': True, 'no_create': True}"
               />
               <field name="period"/>
+              <field name="last_date"/>
+              <field name="next_date"/>
               <field name="type"/>
             </group>
           </sheet>
@@ -28,6 +30,8 @@
           <field name="description"/>
           <field name="contact_id"/>
           <field name="period"/>
+          <field name="last_date"/>
+          <field name="next_date"/>
           <field name="type"/>
         </list>
       </field>
