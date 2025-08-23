@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_health_appointment_root"
+        name="Health Appointment">
+        <menuitem 
+            id="menu_health_appointment"
+            name="Properties"
+            action="action_health_appointment"
+            sequence="1"
+        />
+    </menuitem>   
+</odoo>
