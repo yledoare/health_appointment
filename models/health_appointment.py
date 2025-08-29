@@ -37,7 +37,15 @@ class HealthAppointment(models.Model):
     @api.depends("last_date")
     def _compute_next_appointment(self):
         for record in self:
-            #record.total = record.last_date + dateutil.relativedelta.relativedelta(days=1)
-            #record.total = date.today() + dateutil.relativedelta.relativedelta(days=1)
-            #record.total =  last_date + dateutil.relativedelta.relativedelta(month=12)
-            record.next_appointment = date.today() + dateutil.relativedelta.relativedelta(month=12)
+#            record.next_appointment = record.last_date + dateutil.relativedelta.relativedelta(month=record.period)
+             print("date.today is " + str(date.today()))
+             print("record.period is" + str(record.period))
+             print("date.last_date is " + str(record.last_date))
+             record.next_appointment =  record.last_date + dateutil.relativedelta.relativedelta(month=record.period)
+             nextmonth = record.last_date + dateutil.relativedelta.relativedelta(months=1)
+             print("nextmonth is " + str(record.next_appointment))
+             print("record.next_appointment is " + str(record.next_appointment))
+             nextmonth=date.today() + dateutil.relativedelta.relativedelta(months=2)
+             print("date.today is " + str(date.today()))
+             print("nextmonth is " + str(nextmonth))
+
