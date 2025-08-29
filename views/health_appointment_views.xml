@@ -20,6 +20,7 @@
               <field name="next_appointment"/>
               <field name="next_date"/>
               <field name="email"/>
+              <field name="alert"/>
             </group>
           </sheet>
         </form>
@@ -35,9 +36,10 @@
           <field name="contact_id"/>
           <field name="period"/>
           <field name="last_date"/>
-          <field name="next_appointment"/>
-          <field name="next_date"/>
+          <field name="next_appointment" decoration-danger="alert == True" decoration-success="alert == False" />
+          <field name="next_date" />
           <field name="email"/>
+          <field name="alert"/>
         </list>
       </field>
     </record>

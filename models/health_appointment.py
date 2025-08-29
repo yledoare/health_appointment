@@ -33,19 +33,35 @@ class HealthAppointment(models.Model):
         ('other', 'Autre'),
     ], string='type')
 
+    alert = fields.Boolean(sting='Alert', compute="_compute_alert")
+
     next_appointment = fields.Date(compute="_compute_next_appointment")
     email = fields.Char(string='Email', required=True)
 
+    def _compute_alert(self):
+        for record in self:
+             if(record.period):
+               #print("record.next_appointment " + str(record.next_appointment))
+               #print("date.today" + str(date.today()))
+               if(date.today() > record.next_appointment):
+                 record.alert=True
+               else:
+                 record.alert=False
+             else:
+                 record.alert=False
     @api.depends("last_date")
     def _compute_next_appointment(self):
         for record in self:
-             sourcedate=record.last_date
-             months=record.period
-             month = sourcedate.month - 1 + months
-             year = sourcedate.year + month // 12
-             month = month % 12 + 1
-             day = min(sourcedate.day, calendar.monthrange(year,month)[1])
-             record.next_appointment=datetime.date(year, month, day)
+             if(record.last_date):
+               sourcedate=record.last_date
+               months=record.period
+               month = sourcedate.month - 1 + months
+               year = sourcedate.year + month // 12
+               month = month % 12 + 1
+               day = min(sourcedate.day, calendar.monthrange(year,month)[1])
+               record.next_appointment=datetime.date(year, month, day)
+             else:
+               record.next_appointment=0
 
     def action_send_email(self):
       # OK template = self.env.ref('auth_signup.mail_template_user_signup_account_created')
