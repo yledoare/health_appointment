@@ -23,6 +23,8 @@ Long description of module's purpose
         'views/health_appointment_views.xml',
         # MENU
         'views/menu.xml',
+        # Mail 
+        'data/health_appointment_email.xml',
     ],
     'installable': True,
     'application': True,

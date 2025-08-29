@@ -2,8 +2,9 @@
 
 from odoo import models, fields, api
 from datetime import *
-from dateutil.relativedelta import *
+#from dateutil.relativedelta import *
 import datetime
+import calendar
 import dateutil
 
 class HealthAppointment(models.Model):
@@ -33,11 +34,25 @@ class HealthAppointment(models.Model):
     ], string='type')
 
     next_appointment = fields.Date(compute="_compute_next_appointment")
+    email = fields.Char(string='Email', required=True)
 
     @api.depends("last_date")
     def _compute_next_appointment(self):
         for record in self:
-            #record.total = record.last_date + dateutil.relativedelta.relativedelta(days=1)
-            #record.total = date.today() + dateutil.relativedelta.relativedelta(days=1)
-            #record.total =  last_date + dateutil.relativedelta.relativedelta(month=12)
-            record.next_appointment = date.today() + dateutil.relativedelta.relativedelta(month=12)
+             sourcedate=record.last_date
+             months=record.period
+             month = sourcedate.month - 1 + months
+             year = sourcedate.year + month // 12
+             month = month % 12 + 1
+             day = min(sourcedate.day, calendar.monthrange(year,month)[1])
+             record.next_appointment=datetime.date(year, month, day)
+
+    def action_send_email(self):
+      # OK template = self.env.ref('auth_signup.mail_template_user_signup_account_created')
+      #raise UserError("FIXME")
+      template = self.env.ref('health_appointment.mail_template_health_appointment')
+      if template:
+            # Send the email using the template
+        template.send_mail(self.id, force_send=True)
+      else:
+        raise UserError("Mail Template not found. Please check the template.")

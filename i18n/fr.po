@@ -1,0 +1,168 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* health_appointment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-29 14:38+0000\n"
+"PO-Revision-Date: 2025-08-29 14:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: health_appointment
+#: model:mail.template,body_html:health_appointment.mail_template_health_appointment
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"\t\t\t\t\t<div style=\"justify-content: center;background-color: #714B67; padding:0.6rem;padding-left: 35px;text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;width:40%\">\n"
+"\t\t\t\t\t\t<h2> Hi, </h2>\n"
+"\t\t\t\t\t\t<div>\n"
+"\t\t\t\t\t\t\t<h3>You need a new health appointment with <t t-out=\"object.contact_id.name\"/></h3>\n"
+"\t\t\t\t\t\t</div>\n"
+"\t\t\t\t\t</div>\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t\tRegards,\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t</div>\n"
+"\t\t\t"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__alert
+msgid "Alert"
+msgstr "Alerte"
+
+#. module: health_appointment
+#: model:ir.model.fields.selection,name:health_appointment.selection__health_appointment__type__other
+msgid "Autre"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__contact_id
+msgid "Contact"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields.selection,name:health_appointment.selection__health_appointment__type__dental
+msgid "Dentiste"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__description
+msgid "Description"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__email
+msgid "Email"
+msgstr ""
+
+#. module: health_appointment
+#: model:mail.template,name:health_appointment.mail_template_health_appointment
+msgid "Email template for health appointment"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.actions.act_window,name:health_appointment.action_health_appointment
+#: model:ir.model,name:health_appointment.model_health_appointment
+#: model:ir.ui.menu,name:health_appointment.menu_health_appointment_root
+#: model_terms:ir.ui.view,arch_db:health_appointment.view_health_appointment_form
+msgid "Health Appointment"
+msgstr "Rendez-vous médicaux"
+
+#. module: health_appointment
+#: model_terms:ir.ui.view,arch_db:health_appointment.view_health_appointment_list
+msgid "Health Appointment List"
+msgstr ""
+
+#. module: health_appointment
+#: model:mail.template,subject:health_appointment.mail_template_health_appointment
+msgid "Health_appointment ({{object.name}})"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__id
+msgid "ID"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__last_date
+msgid "Last date"
+msgstr "Date du dernier rendez-vous"
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__next_appointment
+msgid "Next Appointment"
+msgstr "Date limite du prochain rendez-vous"
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__next_date
+msgid "Next date"
+msgstr "Prochain rendez-vous"
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__period
+msgid "Period (month)"
+msgstr "Pérode (mois)"
+
+#. module: health_appointment
+#: model:ir.model.fields.selection,name:health_appointment.selection__health_appointment__type__foot
+msgid "Podologue"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.ui.menu,name:health_appointment.menu_health_appointment
+msgid "Properties"
+msgstr ""
+
+#. module: health_appointment
+#: model_terms:ir.ui.view,arch_db:health_appointment.view_health_appointment_form
+msgid "Send email"
+msgstr "Envoyer l'email"
+
+#. module: health_appointment
+#: model:ir.model.constraint,message:health_appointment.constraint_health_appointment_unique_name
+msgid "The name of the property must be unique"
+msgstr ""
+
+#. module: health_appointment
+#: model:ir.model.fields,field_description:health_appointment.field_health_appointment__type
+msgid "type"
+msgstr ""
