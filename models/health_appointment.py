@@ -33,6 +33,7 @@ class HealthAppointment(models.Model):
     ], string='type')
 
     next_appointment = fields.Date(compute="_compute_next_appointment")
+    email = fields.Char(string='Email', required=True)
 
     @api.depends("last_date")
     def _compute_next_appointment(self):
@@ -49,3 +50,12 @@ class HealthAppointment(models.Model):
              print("date.today is " + str(date.today()))
              print("nextmonth is " + str(nextmonth))
 
+    def action_send_email(self):
+      # OK template = self.env.ref('auth_signup.mail_template_user_signup_account_created')
+      #raise UserError("FIXME")
+      template = self.env.ref('health_appointment.mail_template_health_appointment')
+      if template:
+            # Send the email using the template
+        template.send_mail(self.id, force_send=True)
+      else:
+        raise UserError("Mail Template not found. Please check the template.")

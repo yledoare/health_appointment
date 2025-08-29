@@ -5,6 +5,9 @@
       <field name="model">health.appointment</field>
       <field name="arch" type="xml">
         <form string="Health Appointment">
+            <header>
+              <button name="action_send_email" string="Send email" type="object"></button>
+            </header>
           <sheet>
             <group>
               <field name="name"/>
@@ -16,7 +19,7 @@
               <field name="last_date"/>
               <field name="next_appointment"/>
               <field name="next_date"/>
-              <field name="type"/>
+              <field name="email"/>
             </group>
           </sheet>
         </form>
@@ -34,7 +37,7 @@
           <field name="last_date"/>
           <field name="next_appointment"/>
           <field name="next_date"/>
-          <field name="type"/>
+          <field name="email"/>
         </list>
       </field>
     </record>
