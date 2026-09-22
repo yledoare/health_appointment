@@ -1,0 +1,10 @@
+<odoo>
+    <record id="group_health_appointment_user" model="res.groups">
+        <field name="name">Health Appointment User</field>
+    </record>
+
+    <record id="group_health_appointment_manager" model="res.groups">
+        <field name="name">Health Appointment Manager</field>
+        <field name="implied_ids" eval="[(4, ref('health_appointment.group_health_appointment_user'))]"/>
+    </record>
+</odoo>

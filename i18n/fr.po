@@ -158,11 +158,6 @@ msgid "Send email"
 msgstr "Envoyer l'email"
 
 #. module: health_appointment
-#: model:ir.model.constraint,message:health_appointment.constraint_health_appointment_unique_name
-msgid "The name of the property must be unique"
-msgstr ""
-
-#. module: health_appointment
 #: model:ir.model.fields,field_description:health_appointment.field_health_appointment__type
 msgid "type"
 msgstr ""

@@ -18,6 +18,8 @@ Long description of module's purpose
 
     'data': [
         # SECURITY
+        'security/res_groups.xml',
+        'security/health_appointment_rules.xml',
         'security/ir.model.access.csv',
         # VIEWS
         'views/health_appointment_views.xml',

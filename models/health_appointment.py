@@ -11,7 +11,6 @@ class HealthAppointment(models.Model):
     _name = 'health.appointment'
     _description = 'Health Appointment'
     _sql_constraints = [
-#        ('unique_name', 'UNIQUE(name) ', 'The name of the property must be unique')
     ]
 
     name = fields.Char(string='Name', required=True)
@@ -36,6 +35,13 @@ class HealthAppointment(models.Model):
     next_appointment = fields.Date(compute="_compute_next_appointment")
     email = fields.Char(string='Email')
     # email = fields.Char(string='Email', required=True)
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        required=True,
+        default=lambda self: self.env.company,
+        index=True,
+    )
 
     @api.depends("last_date")
     def _compute_next_appointment(self):
